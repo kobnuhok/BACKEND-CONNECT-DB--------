@@ -9,13 +9,13 @@ const gameSchema = new mongoose.Schema({
     categories: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'Category'
+            ref: 'category'
         }
     ],
     users: [
         {
             type: mongoose.Schema.Types.ObjectId,
-            ref: 'User'
+            ref: 'user'
         }
     ]
 });
