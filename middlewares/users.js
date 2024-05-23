@@ -1,5 +1,5 @@
 const users = require('../models/user');
-const bcrypt = require('bcrypt');
+const bcrypt = require('bcryptjs');
 
 const hashPassword = async (req, res, next) => {
   try {
