@@ -1,13 +1,12 @@
-const express = require('express');
-const pagesRouter = express.Router();
-const { sendIndex } = require('../controllers/auth');
+const pagesRouter = require("express").Router();
+const { checkAuth, checkCookiesJWT } = require("../middlewares/auth");
+const { sendIndex, sendDashboard } = require("../controllers/auth.js");
 
-pagesRouter.get('/', sendIndex);
+pagesRouter.get("/admin/**", checkCookiesJWT, checkAuth, sendDashboard);
+
+pagesRouter.get("/", sendIndex);
 
 module.exports = pagesRouter;
-
-
-
 
 
 
