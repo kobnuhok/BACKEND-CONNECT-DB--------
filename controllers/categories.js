@@ -25,13 +25,6 @@ const sendCategoryUpdated = (req, res) => {
     res.status(200).send(JSON.stringify({ message: "Категория удалена" }));
   };
 
-  const checkEmptyName = (req, res, next) => {
-    if (!req.body.name) {
-      res.setHeader("Content-Type", "application/json");
-      res.status(400).send(JSON.stringify({ message: "Не указано название категории" }));
-    } else {
-      next();
-    }
-  };
 
-module.exports = {sendAllCategories, sendCategoryCreated, sendCategoryById, sendCategoryUpdated, sendCategoryDeleted, checkEmptyName};
+
+module.exports = {sendAllCategories, sendCategoryCreated, sendCategoryById, sendCategoryUpdated, sendCategoryDeleted};
